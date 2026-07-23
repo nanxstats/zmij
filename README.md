@@ -8,49 +8,59 @@
 [![extendr](https://img.shields.io/badge/extendr-%5E0.9.0-276DC2)](https://extendr.github.io/extendr/extendr_api/)
 <!-- badges: end -->
 
-The goal of zmij is to …
+zmij converts double-precision floating-point values to decimal strings
+with the shortest significands needed for round-trip recovery. It
+provides a vectorized R interface to the
+[zmij](https://github.com/dtolnay/zmij) Rust crate, a port of Victor
+Zverovich’s [zmij algorithm](https://github.com/vitaut/zmij).
 
 ## Installation
 
-You can install the development version of zmij from
-[GitHub](https://github.com/) with:
+You can install the development version of zmij from GitHub with:
 
 ``` r
 # install.packages("pak")
 pak::pak("nanxstats/zmij")
 ```
 
-## Example
+## Usage
 
-This is a basic example which shows you how to solve a common problem:
+Format a numeric vector:
 
 ``` r
 library(zmij)
-## basic example code
+
+x <- c(pi, 0.1, -0, .Machine$double.xmin, .Machine$double.xmax)
+text <- format_double(x)
+text
+#> [1] "3.141592653589793"       "0.1"
+#> [3] "-0.0"                    "2.2250738585072014e-308"
+#> [5] "1.7976931348623157e+308"
+identical(parse_double(text), x)
+#> [1] TRUE
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+Missing and non-finite values are handled explicitly:
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+format_double(c(NA_real_, NaN, Inf, -Inf))
+#> [1] NA     "NaN"  "inf"  "-inf"
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
+`parse_double()` is also useful directly when correctly rounded
+conversion is important, especially near the limits of the binary64
+range:
 
 ``` r
-plot(pressure)
+parse_double(c("1.5", "3e-1", "5e-324", "1.7976931348623157e+308"))
+#> [1]  1.500000e+00  3.000000e-01 4.940656e-324 1.797693e+308
 ```
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+Names and dimensions are preserved:
+
+``` r
+format_double(matrix(c(0.1, pi, 1e-6, 1e16), nrow = 2))
+#>      [,1]                [,2]
+#> [1,] "0.1"               "1e-6"
+#> [2,] "3.141592653589793" "1e+16"
+```

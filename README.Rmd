@@ -19,38 +19,49 @@ knitr::opts_chunk$set(
 [![extendr](https://img.shields.io/badge/extendr-^0.9.0-276DC2)](https://extendr.github.io/extendr/extendr_api/)
 <!-- badges: end -->
 
-The goal of zmij is to ...
+zmij converts double-precision floating-point values to decimal strings with
+the shortest significands needed for round-trip recovery. It provides a
+vectorized R interface to the [zmij](https://github.com/dtolnay/zmij) Rust
+crate, a port of Victor Zverovich's
+[zmij algorithm](https://github.com/vitaut/zmij).
 
 ## Installation
 
-You can install the development version of zmij from [GitHub](https://github.com/) with:
+You can install the development version of zmij from GitHub with:
 
 ``` r
 # install.packages("pak")
 pak::pak("nanxstats/zmij")
 ```
 
-## Example
+## Usage
 
-This is a basic example which shows you how to solve a common problem:
+Format a numeric vector:
 
 ```{r example}
 library(zmij)
-## basic example code
+
+x <- c(pi, 0.1, -0, .Machine$double.xmin, .Machine$double.xmax)
+text <- format_double(x)
+text
+identical(parse_double(text), x)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+Missing and non-finite values are handled explicitly:
 
-```{r cars}
-summary(cars)
+```{r special-values}
+format_double(c(NA_real_, NaN, Inf, -Inf))
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
+`parse_double()` is also useful directly when correctly rounded conversion is
+important, especially near the limits of the binary64 range:
 
-You can also embed plots, for example:
-
-```{r pressure, echo=TRUE, eval=FALSE}
-plot(pressure)
+```{r parse}
+parse_double(c("1.5", "3e-1", "5e-324", "1.7976931348623157e+308"))
 ```
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+Names and dimensions are preserved:
+
+```{r shape}
+format_double(matrix(c(0.1, pi, 1e-6, 1e16), nrow = 2))
+```
