@@ -8,3 +8,4 @@
 ^src/Makevars\.win$
 
 ^LICENSE\.md$
+^README\.Rmd$
