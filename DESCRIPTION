@@ -1,17 +1,21 @@
 Package: zmij
 Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
+Version: 0.1.0
+Authors@R: c(
+    person("Nan", "Xiao", email = "me@nanx.me", role = c("aut", "cre", "cph"),
+           comment = c(ORCID = "0000-0002-0250-5673"))
+    )
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
+URL: https://nanx.me/zmij/, https://github.com/nanxstats/zmij
+BugReports: https://github.com/nanxstats/zmij/issues
 Encoding: UTF-8
+Depends:
+    R (>= 4.2)
+Suggests:
+    testthat (>= 3.0.0)
+SystemRequirements: Cargo (Rust's package manager), rustc >= 1.65.0, xz
+Config/rextendr/version: 0.5.0
+Config/testthat/edition: 3
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 8.0.0
-Config/rextendr/version: 0.5.0
-SystemRequirements: Cargo (Rust's package manager), rustc >= 1.65.0, xz
-Depends: 
-    R (>= 4.2)
-Suggests: 
-    testthat (>= 3.0.0)
-Config/testthat/edition: 3
