@@ -1,12 +1,21 @@
 Package: zmij
-Title: What the Package Does (One Line, Title Case)
+Title: Round-Trip-Safe Double-Precision Formatting
 Version: 0.1.0
 Authors@R: c(
     person("Nan", "Xiao", email = "me@nanx.me", role = c("aut", "cre", "cph"),
-           comment = c(ORCID = "0000-0002-0250-5673"))
+           comment = c(ORCID = "0000-0002-0250-5673")),
+    person("David", "Tolnay", role = c("ctb", "cph"),
+           comment = "Author of the vendored Rust zmij crate"),
+    person("Victor", "Zverovich", role = c("ctb", "cph"),
+           comment = "Author of the zmij algorithm and original C++ implementation")
     )
-Description: What the package does (one paragraph).
+Description: Converts double-precision floating-point values to decimal strings
+    with the shortest significands needed for round-trip recovery. Uses the
+    'zmij' algorithm through a vendored Rust implementation and provides
+    vectorized formatting, a correctly rounded inverse parser, and explicit
+    handling of missing and non-finite values.
 License: MIT + file LICENSE
+Copyright: file inst/COPYRIGHTS
 URL: https://nanx.me/zmij/, https://github.com/nanxstats/zmij
 BugReports: https://github.com/nanxstats/zmij/issues
 Encoding: UTF-8
@@ -14,7 +23,7 @@ Depends:
     R (>= 4.2)
 Suggests:
     testthat (>= 3.0.0)
-SystemRequirements: Cargo (Rust's package manager), rustc >= 1.65.0, xz
+SystemRequirements: Cargo (Rust's package manager), rustc >= 1.71.0, xz
 Config/rextendr/version: 0.5.0
 Config/testthat/edition: 3
 Roxygen: list(markdown = TRUE)

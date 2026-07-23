@@ -1,0 +1,96 @@
+Bundled third-party software
+================================
+
+The source distribution vendors the Rust crates listed below in
+src/rust/vendor.tar.xz. Upstream license files and notices distributed with
+the crates are retained in that archive. The MIT terms applicable to bundled
+software are reproduced in inst/COPYRIGHTS.
+
+The zmij crate is a Rust implementation maintained by David Tolnay and ported
+line by line from Victor Zverovich's original zmij implementation.
+
+For crates offered under either the MIT or Apache License 2.0, this package
+redistributes them under the MIT option. The Unicode license remains applicable
+to unicode-ident as indicated below.
+
+
+Crate inventory
+===============
+
+Name:     extendr-api
+Version:  0.9.0
+Files:    src/rust/vendor.tar.xz:vendor/extendr-api/*
+Authors:  extendr contributors
+License:  MIT
+
+Name:     extendr-ffi
+Version:  0.9.0
+Files:    src/rust/vendor.tar.xz:vendor/extendr-ffi/*
+Authors:  extendr contributors
+License:  MIT
+
+Name:     extendr-macros
+Version:  0.9.0
+Files:    src/rust/vendor.tar.xz:vendor/extendr-macros/*
+Authors:  extendr contributors
+License:  MIT
+
+Name:     lazy_static
+Version:  1.5.0
+Files:    src/rust/vendor.tar.xz:vendor/lazy_static/*
+Authors:  Marvin Löbel
+License:  MIT OR Apache-2.0
+
+Name:     once_cell
+Version:  1.21.4
+Files:    src/rust/vendor.tar.xz:vendor/once_cell/*
+Authors:  Aleksey Kladov
+License:  MIT OR Apache-2.0
+
+Name:     paste
+Version:  1.0.15
+Files:    src/rust/vendor.tar.xz:vendor/paste/*
+Authors:  David Tolnay
+License:  MIT OR Apache-2.0
+
+Name:     proc-macro2
+Version:  1.0.107
+Files:    src/rust/vendor.tar.xz:vendor/proc-macro2/*
+Authors:  David Tolnay, Alex Crichton
+License:  MIT OR Apache-2.0
+
+Name:     quote
+Version:  1.0.47
+Files:    src/rust/vendor.tar.xz:vendor/quote/*
+Authors:  David Tolnay
+License:  MIT OR Apache-2.0
+
+Name:     readonly
+Version:  0.2.14
+Files:    src/rust/vendor.tar.xz:vendor/readonly/*
+Authors:  David Tolnay
+License:  MIT OR Apache-2.0
+
+Name:     syn
+Version:  2.0.119
+Files:    src/rust/vendor.tar.xz:vendor/syn-2.0.119/*
+Authors:  David Tolnay
+License:  MIT OR Apache-2.0
+
+Name:     syn
+Version:  3.0.3
+Files:    src/rust/vendor.tar.xz:vendor/syn/*
+Authors:  David Tolnay
+License:  MIT OR Apache-2.0
+
+Name:     unicode-ident
+Version:  1.0.24
+Files:    src/rust/vendor.tar.xz:vendor/unicode-ident/*
+Authors:  David Tolnay
+License:  (MIT OR Apache-2.0) AND Unicode-3.0
+
+Name:     zmij
+Version:  1.0.23
+Files:    src/rust/vendor.tar.xz:vendor/zmij/*
+Authors:  David Tolnay; original implementation by Victor Zverovich
+License:  MIT

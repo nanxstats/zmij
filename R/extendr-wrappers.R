@@ -5,8 +5,12 @@
 #' @useDynLib zmij, .registration = TRUE
 NULL
 
-#' Return string `"Hello world!"` to R.
-#' @export
-hello_world <- function() .Call(wrap__hello_world)
+#' Format doubles with zmij.
+#' @keywords internal
+format_double_impl <- function(x) .Call(wrap__format_double_impl, x)
+
+#' Parse doubles with Rust's correctly rounded parser.
+#' @keywords internal
+parse_double_impl <- function(x) .Call(wrap__parse_double_impl, x)
 
 # nolint end
