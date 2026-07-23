@@ -6,6 +6,7 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/nanxstats/zmij/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nanxstats/zmij/actions/workflows/R-CMD-check.yaml)
+![CRAN status](https://www.r-pkg.org/badges/version/zmij)
 [![extendr](https://img.shields.io/badge/extendr-%5E0.9.0-276DC2)](https://extendr.github.io/extendr/extendr_api/)
 <!-- badges: end -->
 
