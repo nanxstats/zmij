@@ -8,7 +8,11 @@
 ^src/Makevars\.win$
 
 ^references$
+^\.github$
 ^AGENTS\.md$
 ^LICENSE\.md$
 ^README\.Rmd$
 ^cran-comments\.md$
+^_pkgdown\.yml$
+^pkgdown$
+^docs$

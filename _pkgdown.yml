@@ -1,0 +1,7 @@
+url: https://nanx.me/zmij/
+
+template:
+  bootstrap: 5
+  bslib:
+    preset: "bootstrap"
+  math-rendering: "mathjax"
