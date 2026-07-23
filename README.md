@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+[![R-CMD-check](https://github.com/nanxstats/zmij/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nanxstats/zmij/actions/workflows/R-CMD-check.yaml)
 [![extendr](https://img.shields.io/badge/extendr-%5E0.9.0-276DC2)](https://extendr.github.io/extendr/extendr_api/)
 <!-- badges: end -->
 
@@ -33,7 +34,7 @@ library(zmij)
 x <- c(pi, 0.1, -0, .Machine$double.xmin, .Machine$double.xmax)
 text <- format_double(x)
 text
-#> [1] "3.141592653589793"       "0.1"
+#> [1] "3.141592653589793"       "0.1"                    
 #> [3] "-0.0"                    "2.2250738585072014e-308"
 #> [5] "1.7976931348623157e+308"
 identical(parse_double(text), x)
@@ -60,7 +61,7 @@ Names and dimensions are preserved:
 
 ``` r
 format_double(matrix(c(0.1, pi, 1e-6, 1e16), nrow = 2))
-#>      [,1]                [,2]
-#> [1,] "0.1"               "1e-6"
+#>      [,1]                [,2]   
+#> [1,] "0.1"               "1e-6" 
 #> [2,] "3.141592653589793" "1e+16"
 ```
