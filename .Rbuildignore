@@ -7,6 +7,8 @@
 ^src/Makevars$
 ^src/Makevars\.win$
 
+^references$
+^AGENTS\.md$
 ^LICENSE\.md$
 ^README\.Rmd$
 ^cran-comments\.md$
