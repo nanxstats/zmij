@@ -1,0 +1,46 @@
+The zmij R package
+==================
+
+Copyright (c) 2026 Nan Xiao
+
+The R package code is licensed under the MIT License. See the package LICENSE
+file for the complete terms.
+
+
+Bundled third-party software
+============================
+
+The source distribution includes zmij version 1.0.23, a Rust port by David
+Tolnay of Victor Zverovich's zmij floating-point conversion implementation.
+
+Copyright (c) 2025-present Victor Zverovich
+
+The vendored Rust crate is distributed under the MIT License. The complete
+license text and upstream notices are retained in src/rust/vendor.tar.xz.
+
+Additional Rust dependencies, their authorship, versions, and licenses are
+documented in the package-level LICENSE.note file. Their complete upstream
+license files and notices, when distributed with the crates, are retained in
+src/rust/vendor.tar.xz.
+
+
+MIT License terms for bundled software
+======================================
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
