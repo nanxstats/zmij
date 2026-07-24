@@ -30,14 +30,15 @@ Format a numeric vector:
 
 ``` r
 library(zmij)
+```
 
+``` r
 x <- c(pi, 0.1, -0, .Machine$double.xmin, .Machine$double.xmax)
-text <- format_double(x)
-text
+x |> format_double()
 #> [1] "3.141592653589793"       "0.1"                    
 #> [3] "-0.0"                    "2.2250738585072014e-308"
 #> [5] "1.7976931348623157e+308"
-identical(parse_double(text), x)
+x |> format_double() |> parse_double() |> identical(x)
 #> [1] TRUE
 ```
 
@@ -57,11 +58,25 @@ parse_double(c("1.5", "3e-1", "5e-324", "1.7976931348623157e+308"))
 #> [1]  1.500000e+00  3.000000e-01 4.940656e-324 1.797693e+308
 ```
 
-Names and dimensions are preserved:
+Names, dimensions, and values are preserved through a round trip:
 
 ``` r
-format_double(matrix(c(0.1, pi, 1e-6, 1e16), nrow = 2))
-#>      [,1]                [,2]   
-#> [1,] "0.1"               "1e-6" 
-#> [2,] "3.141592653589793" "1e+16"
+x <- c(pi = pi, tenth = 0.1)
+x |> format_double()
+#>                  pi               tenth 
+#> "3.141592653589793"               "0.1"
+x |> format_double() |> parse_double() |> identical(x)
+#> [1] TRUE
+
+x <- matrix(
+  c(0.1, pi, 1e-6, 1e16),
+  nrow = 2,
+  dimnames = list(c("first", "second"), c("small", "large"))
+)
+x |> format_double()
+#>        small               large  
+#> first  "0.1"               "1e-6" 
+#> second "3.141592653589793" "1e+16"
+x |> format_double() |> parse_double() |> identical(x)
+#> [1] TRUE
 ```
