@@ -1,7 +1,8 @@
 use extendr_api::prelude::*;
 
 /// Format doubles with zmij.
-/// @keywords internal
+///
+/// @noRd
 #[extendr]
 fn format_double_impl(x: Doubles) -> Strings {
     let mut output = Strings::new_with_na(x.len());
@@ -17,9 +18,15 @@ fn format_double_impl(x: Doubles) -> Strings {
 }
 
 /// Parse doubles with Rust's correctly rounded parser.
-/// @keywords internal
+///
+/// @noRd
 #[extendr]
 fn parse_double_impl(x: Strings) -> extendr_api::Result<Doubles> {
+    if x.is_empty() {
+        let output: Robj = Vec::<f64>::new().into();
+        return output.try_into();
+    }
+
     let mut output = Doubles::new_with_na(x.len());
 
     for (i, value) in x.iter().enumerate() {

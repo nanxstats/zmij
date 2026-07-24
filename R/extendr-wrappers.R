@@ -6,11 +6,13 @@
 NULL
 
 #' Format doubles with zmij.
-#' @keywords internal
+#'
+#' @noRd
 format_double_impl <- function(x) .Call(wrap__format_double_impl, x)
 
 #' Parse doubles with Rust's correctly rounded parser.
-#' @keywords internal
+#'
+#' @noRd
 parse_double_impl <- function(x) .Call(wrap__parse_double_impl, x)
 
 # nolint end
