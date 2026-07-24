@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/nanxstats/zmij/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nanxstats/zmij/actions/workflows/R-CMD-check.yaml)
-[![extendr](https://img.shields.io/badge/extendr-%5E0.9.0-276DC2)](https://extendr.github.io/extendr/extendr_api/)
+[![extendr](https://img.shields.io/badge/extendr-%5E0.9.0-276DC2)](https://extendr.rs/extendr/extendr_api/)
 <!-- badges: end -->
 
 zmij converts double-precision floating-point values to decimal strings
