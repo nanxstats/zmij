@@ -38,9 +38,9 @@ $(STATLIB):
 	export PATH="$(PATH):$(HOME)/.cargo/bin" && \
 	@PANIC_EXPORTS@RUSTFLAGS="$(RUSTFLAGS) --print=native-static-libs" cargo build @CRAN_FLAGS@ --lib @PROFILE@ --manifest-path=./rust/Cargo.toml --target-dir $(TARGET_DIR) @TARGET@
 
-	export CARGO_HOME=$(CARGOTMP) && \
-	export PATH="$(PATH):$(HOME)/.cargo/bin" && \
-	cargo run @CRAN_FLAGS@ --bin document --manifest-path=./rust/Cargo.toml --target-dir $(TARGET_DIR) @TARGET@
+	# R/extendr-wrappers.R and src/entrypoint.c are generated during
+	# development and shipped with the package. Regenerating them at install
+	# time is unnecessary and is not portable across Rust host/target setups.
 
 	# Always clean up CARGOTMP
 	rm -Rf $(CARGOTMP);
