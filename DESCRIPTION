@@ -1,5 +1,5 @@
 Package: zmij
-Title: Round-Trip Safe Double-Precision Formatting
+Title: Round-Trip-Safe Double-Precision Formatting
 Version: 0.1.0
 Authors@R: c(
     person("Nan", "Xiao", email = "me@nanx.me", role = c("aut", "cre", "cph"),
@@ -11,9 +11,11 @@ Authors@R: c(
     )
 Description: Converts double-precision floating-point values to decimal strings
     with the shortest significands needed for round-trip recovery. Uses the
-    'zmij' algorithm through a vendored Rust implementation and provides
-    vectorized formatting, a correctly rounded inverse parser, and explicit
-    handling of missing and non-finite values.
+    'zmij' algorithm through a vendored 'Rust' implementation. The method is
+    described in Zverovich (2025), "Faster Double-to-String Conversion"
+    <https://vitaut.net/posts/2025/faster-dtoa/>. Provides vectorized
+    formatting, a correctly rounded inverse parser, and explicit handling of
+    missing and non-finite values.
 License: MIT + file LICENSE
 Copyright: file inst/COPYRIGHTS
 URL: https://nanx.me/zmij/, https://github.com/nanxstats/zmij
