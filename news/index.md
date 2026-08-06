@@ -2,6 +2,8 @@
 
 ## zmij 0.1.0
 
+CRAN release: 2026-08-04
+
 ### New features
 
 - Added

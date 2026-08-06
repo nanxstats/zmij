@@ -14,7 +14,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/nanxstats/zmij/blob/v0.1.0/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/nanxstats/zmij/blob/main/DESCRIPTION)
 
 Xiao N (2026). *zmij: Round-Trip-Safe Double-Precision Formatting*. R
 package version 0.1.0, <https://nanx.me/zmij/>.
