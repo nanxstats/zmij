@@ -19,7 +19,13 @@ Zverovich’s [zmij algorithm](https://github.com/vitaut/zmij).
 
 ## Installation
 
-You can install the development version of zmij from GitHub with:
+You can install zmij from CRAN:
+
+``` r
+install.packages("zmij")
+```
+
+Or try the development version from GitHub:
 
 ``` r
 # install.packages("pak")
